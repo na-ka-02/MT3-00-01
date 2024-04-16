@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Vector3.h"
 
-//加算
+//加算__
 Vector3 Add(const Vector3& v1, const Vector3& v2);
 //減算
 Vector3 Subtract(const Vector3& v1, const Vector3& v2);

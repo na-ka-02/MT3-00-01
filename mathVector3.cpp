@@ -2,7 +2,7 @@
 #include <Novice.h>
 #include "math.h"
 
-//加算
+//加算__
 Vector3 Add(const Vector3& v1, const Vector3& v2)
 {
 	Vector3 result = {};
