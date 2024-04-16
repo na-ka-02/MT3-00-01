@@ -35,11 +35,7 @@ Vector3 Multiply(float scalar, const Vector3& v)
 //内積 fabsf←絶対値
 float Dot(const Vector3& v1, const Vector3& v2)
 {
-	float theta = 5.0f;
 	float result = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
-	result = fabsf(v1.x * v2.x) * float(cos(theta));
-	result = fabsf(v1.y * v2.y) * float(cos(theta));
-	result = fabsf(v1.z * v2.z) * float(cos(theta));
 	return float(result);
 }
 
@@ -47,9 +43,7 @@ float Dot(const Vector3& v1, const Vector3& v2)
 float Length(const Vector3& v)
 {
 	float result = 0;
-	result = float(sqrt(v.x * v.x));
-	result = float(sqrt(v.y * v.y));
-	result = float(sqrt(v.z * v.z));
+	result = sqrtf(Dot(v, v));
 	return float(result);
 }
 
@@ -57,9 +51,9 @@ float Length(const Vector3& v)
 Vector3 Nomalize(const Vector3& v)
 {
 	Vector3 result = {};
-	result.x = v.x / fabsf(v.x);
-	result.x = v.y / fabsf(v.y);
-	result.x = v.z / fabsf(v.z);
+	result.x = v.x / Length(v);
+	result.y = v.y / Length(v);
+	result.z = v.z / Length(v);
 	return Vector3(result);
 }
 
